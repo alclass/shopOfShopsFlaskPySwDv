@@ -1,0 +1,11 @@
+data/
+migrations/
+venv/
+.idea/
+config.py
+*.bak
+*/*.bak
+*/*.html
+*.ini
+**/*.png
+**/*.pyc
