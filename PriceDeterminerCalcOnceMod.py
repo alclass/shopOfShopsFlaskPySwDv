@@ -11,12 +11,14 @@ class PriceDeterminer:
     self._price = None
 
   def update_percentcostsdict(self, percentsdict):
+    self._total_percentcosts = None
+    self._price = None
     self.percentcostsdict.update(percentsdict)
-    self.recalculate()
 
   def update_fixcostdict(self, costdict):
+    self._total_fixcosts = None
+    self._price = None
     self.fixcostdict.update(costdict)
-    self.recalculate()
 
   def calculate_total_fixcosts(self):
     self._total_fixcosts = 0
@@ -35,13 +37,6 @@ class PriceDeterminer:
     for percentkey in self.percentcostsdict:
       self._total_percentcosts += self.percentcostsdict[percentkey]
 
-  def postcalculate_total_variablecosts(self):
-    self._total_variable_costs = 0
-    for percentkey in self.percentcostsdict:
-      percent_value = self.percentcostsdict[percentkey]
-      variable_cost = self.price * percent_value
-      self._total_variable_costs += variable_cost
-
   @property
   def total_percentcosts(self):
     if self._total_percentcosts:
@@ -49,21 +44,16 @@ class PriceDeterminer:
     self.calculate_total_percentcosts()
     return self._total_percentcosts
 
-  def recalculate(self):
-    self.calculate_total_percentcosts()
-    self.calculate_total_fixcosts()
-    self._price = self.total_fixcosts / (1 - self.total_percentcosts)
-    self.postcalculate_total_variablecosts()
-    price = self.total_fixcosts + self.total_variable_costs
-    assert (self._price,  price)
-
   @property
   def price(self):
     if self.total_fixcosts is None or self.total_percentcosts is None:
       return None
     if self._price is None:
-      self.recalculate()
+      self.calculate_price()
     return self._price
+
+  def calculate_price(self):
+      self._price = self.total_fixcosts / (1 - self.total_percentcosts)
 
   @property
   def total_variable_costs(self):

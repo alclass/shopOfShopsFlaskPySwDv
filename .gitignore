@@ -1,5 +1,6 @@
 data/
 migrations/
+node_modules/
 venv/
 .idea/
 config.py
