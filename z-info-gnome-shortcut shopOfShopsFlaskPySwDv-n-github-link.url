@@ -1,0 +1,32 @@
+/home/dados/Sw3/SwDv/L_CompLang_SwDv/PythonSwDv/BizPySwDv
+https://pypi.org/project/tabulate/
+https://github.com/alclass/shopOfShopsFlaskPySwDv
+
+removed 1 package and audited 1641 packages in 13.277s
+
+59 packages are looking for funding
+  run `npm fund` for details
+
+found 1 low severity vulnerability
+  run `npm audit fix` to fix them, or `npm audit` for details
+
+Success! Created shop-of-shops at /home/dados/Sw3/SwDv/L_CompLang_SwDv/PythonSwDv/BizPySwDv/shopOfShopsFlaskPySwDv/shop-of-shops
+Inside that directory, you can run several commands:
+
+  npm start
+    Starts the development server.
+
+  npm run build
+    Bundles the app into static files for production.
+
+  npm test
+    Starts the test runner.
+
+  npm run eject
+    Removes this tool and copies build dependencies, configuration files
+    and scripts into the app directory. If you do this, you can’t go back!
+
+We suggest that you begin by typing:
+
+  cd shop-of-shops
+  npm start

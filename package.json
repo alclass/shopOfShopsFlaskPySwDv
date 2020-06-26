@@ -1,0 +1,27 @@
+{
+  "name": "shopofshops",
+  "version": "1.0.0",
+  "description": "An exercise to work with some concepts of a virtual shop",
+  "main": "index.js",
+  "dependencies": {
+    "jshint": "^2.11.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "virtual",
+    "shop",
+    "javascript",
+    "nodejs",
+    "react",
+    "flask",
+    "python",
+    "exercise"
+  ],
+  "author": "Luiz Lewis",
+  "license": "ISC"
+}
